@@ -6,5 +6,12 @@
 </head>
 <body>
     <h1>Our Delicious Food</h1>
+    {% for kind in kinds %}
+        <h2>{{ kind.1 }}</h2>
+        {% for row in meal_list %}
+            <h3>{{ row.name }}</h3>
+            <p>{{ row.description }}</p>
+        {% endfor %}
+    {% endfor %}
 </body>
 </html>
