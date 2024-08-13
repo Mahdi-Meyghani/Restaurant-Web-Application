@@ -5,7 +5,7 @@ from .models import Meal
 class MenuMealAdmin(admin.ModelAdmin):
     list_display = ("name", "status")
     search_fields = ("name", "description")
-    list_filter = ("status", )
+    list_filter = ("status", "category")
 
 
 admin.site.register(Meal, MenuMealAdmin)

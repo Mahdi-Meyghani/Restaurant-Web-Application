@@ -9,8 +9,15 @@
     {% for kind in kinds %}
         <h2>{{ kind.1 }}</h2>
         {% for row in meal_list %}
-            <h3>{{ row.name }}</h3>
-            <p>{{ row.description }}</p>
+            {% if row.category == kind.0 %}
+                {% if row.status == 0 %}
+                    <h3><del>{{ row.name }}</del></h3>
+                    <p>{{ row.description }}</p>
+                {% else %}
+                    <h3>{{ row.name }}</h3>
+                    <p>{{ row.description }}</p>
+                {% endif %}
+            {% endif %}
         {% endfor %}
     {% endfor %}
 </body>
