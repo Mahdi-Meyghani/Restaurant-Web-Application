@@ -16,3 +16,12 @@ class MenuList(generic.ListView):
 class MenuDetail(generic.DetailView):
     model = Meal
     template_name = "menu_item_detail.html"
+
+
+class About(generic.ListView):
+    queryset = Meal.objects.order_by("date_updated")
+    template_name = "about.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
